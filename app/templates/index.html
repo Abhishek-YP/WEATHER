@@ -1,0 +1,107 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body class="bg-[url('images/bg_image.jpg')] bg-cover bg-no-repeat min-h-screen items-center flex flex-col gap-5 p-10">
+
+    <div class="flex items-center w-fit">
+
+        <h1 class="text-white text-2xl font-bold">Weather App</h1>
+    <img class="h-14 w-14" src="{% static 'images/116.png' %}" alt="" >
+
+    </div>
+
+    <form action="" method="get" class="flex gap-2 justify-center items-center w-4/5 md:w-3/5 lg:w-[70%] ">
+
+        <input type="text" name="city" class="rounded-full py-2 px-3 focus:bg-white/20 outline-white/70 bg-white focus:placeholder:text-white text-white w-4/5 md:w-3/5 lg:w-[35%] " placeholder="Enter the City">
+
+        <button class="search" type="submit">
+            <ion-icon class="text-white text-2xl bg-white/20 rounded-full p-3" name="search-outline"></ion-icon>
+        </button>
+    </form>
+
+    <div class="flex bg-white/20 p-3 rounded-3xl backdrop-blur-sm text-white w-4/5 md:w-3/5 lg:w-[35%] cursor-pointer hover:scale-[105%] ease-in-out duration-500 justify-between">
+
+<div id='left' class="flex flex-col">
+    <div id="top" class="mb-6 ">
+        <p class="font-bold text-3xl">{{temperature}}&deg; C</p>
+        <p class="font-semibold">Now</p>
+    </div>
+    <div id="bottom" class="font-semibold text-xl">
+       {{name}}, {{country}} 
+    </div>
+</div>
+<div id="right" class="justify-center items-center">
+    <img src="{% static 'images/113.png' %}" alt="" class="w-28 h-28">
+</div>
+    </div>
+
+
+    <div class="flex p-3 bg-[#0198afa9] rounded-xl backdrop-blur-2xl md:w-3/5 lg:w-[35%] w-[80%] gap-12" >
+        
+        <div id="left" class="text-white">
+            <div class="top mb-16 mt-3 ">
+                <img src="{{img_url}}" alt="">
+            </div>
+            <div id="bottom">
+                <p class="flex font-bold text-4xl">{{weather}}</p>
+                <p class="font-semibold">{{description}}</p>
+
+            </div>
+        </div>
+
+    <div class="flex w-1/2 flex-col space-y-2">
+
+        <div id="right" class="flex p-3 bg-white/30 rounded-lg gap-6">
+            <div id="left"><ion-icon class="text-white w-8 h-8 mt-2" name="thermometer-outline"></ion-icon></div>
+
+            <div id="right" class="text-white">
+
+                <div class="font-bold text-2xl">{{temperature}}&deg; C</div>
+                <div class="text-sm text-right">Temperature</div>
+
+            </div>
+            
+           
+        </div>
+        <div id="right" class="flex p-3 bg-white/30 rounded-lg gap-6">
+            <div id="left"><ion-icon class="text-white w-8 h-8 mt-2" name="speedometer-outline"></ion-icon></div>
+
+            <div id="right" class="text-white">
+
+                <div class="font-bold text-2xl">{{wind_speed}} m/s</div>
+                <div class="text-sm text-right">Wind Speed</div>
+
+            </div>
+            
+           
+        </div>
+        <div id="right" class="flex p-3 bg-white/30 rounded-lg gap-6">
+            <div id="left"><ion-icon class="text-white w-8 h-8 mt-2" name="rainy-outline"></ion-icon></div>
+
+            <div id="right" class="text-white">
+
+                <div class="font-bold text-2xl">{{humidity}} %</div>
+                <div class="text-sm text-right">Humidity</div>
+
+            </div>
+            
+           
+        </div>
+
+    </div>
+
+    
+
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
